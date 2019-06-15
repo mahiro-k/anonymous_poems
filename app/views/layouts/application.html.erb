@@ -8,8 +8,38 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
-    <%= yield %>
+    <header>
+      <div class="container">
+        <div class="header-left">
+        <%= link_to('匿名詩集','/') %>
+        </div>
+        <div class="header-right">
+          <ul>
+            <li><%= link_to('概要','/about') %></li>
+            <li><%= link_to('詩集一覧','/poems/index') %></li>
+            <li><%= link_to('詩集作成','/about') %></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <div class="main">
+      <div class="container">
+        <%= yield %>
+      </div>
+    </div>
+    <footer>
+      <div class="container">
+        <div class="footer-left">
+          匿名詩集 -Anonymous Poems-
+        </div>
+        <div class="footer-right">
+          <ul>
+            <li><%= link_to('Q&A','/about') %></li>
+            <li><%= link_to('お問い合わせ','/about') %></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
