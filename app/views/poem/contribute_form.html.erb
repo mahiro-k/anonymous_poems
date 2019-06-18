@@ -1,0 +1,7 @@
+<h1 class="page-title">寄稿</h1>
+<h2><%= @poem.title %><h2>
+<%= form_tag("/poems/#{@poem.id}/contribute") do %>
+  <textarea name="content"></textarea>
+  <input type="text" name="author">
+  <input type="submit" value="寄稿">
+<% end %>

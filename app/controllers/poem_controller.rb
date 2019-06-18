@@ -21,9 +21,9 @@ class PoemController < ApplicationController
     # DBに保存できた場合poems/indexへリダイレクト
     # できなかった場合再レンダリングし、エラー表示
     if poem.save
-      
+      redirect_to("/poems/index")
     else
-      
+      render("poem/create_form")
     end
   end
   
@@ -42,9 +42,10 @@ class PoemController < ApplicationController
     # DBに保存できた場合poems/:idへリダイレクト
     # できなかった場合再レンダリングし、エラー表示
     if poetry.save
-      
+      redirect_to("/poems/#{params[:id]}")
     else
-      
+      @poem = Poem.find_by(id: params[:id])
+      render("poem/contribute_form")
     end
   end
 end

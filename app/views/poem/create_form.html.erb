@@ -1,0 +1,6 @@
+<h1 class="page-title">詩集作成</h1>
+<%= form_tag("/poems/create") do %>
+  <input type="text" name="title">
+  <textarea name="discription"></textarea>
+  <input type="submit" value="作成">
+<% end %>
