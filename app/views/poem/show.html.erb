@@ -1,5 +1,6 @@
 <h1 class="page-title"><%= @poem.title %></h1>
 <p><%= @poem.discription %></p>
+<%= link_to("寄稿", "/poems/#{@poem.id}/contribute") %>
 <% @poetries.each do |poetry| %>
 <p>----------</p>
 <p><%= poetry.content %></p>

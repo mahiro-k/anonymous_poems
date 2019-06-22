@@ -23,6 +23,15 @@
         </div>
       </div>
     </header>
+    <% if flash[:notice] %>
+      <div class="notice">
+        <div class="container">
+          <div class="msg-box">
+            <p><%= flash[:notice] %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
     <div class="main">
       <div class="container">
         <%= yield %>

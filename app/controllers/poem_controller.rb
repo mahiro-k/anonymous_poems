@@ -22,8 +22,10 @@ class PoemController < ApplicationController
     # DBに保存できた場合poems/indexへリダイレクト
     # できなかった場合再レンダリングし、エラー表示
     if poem.save
+      flash.now[:notice] = "作成が完了しました。"
       redirect_to("/poems/index")
     else
+    flash.now[:notice] = "内容に誤りがあります。"
       @poem = poem
       render("poem/create_form")
     end
@@ -37,7 +39,7 @@ class PoemController < ApplicationController
   
   def contribute
     # 再レンダリング用に入力情報を保持
-    @content = params[:contnet]
+    @content = params[:content]
     @author = params[:author]
     
     poetry = Poetry.new(poem_id: params[:id], content: @content)
@@ -50,9 +52,11 @@ class PoemController < ApplicationController
     # DBに保存できた場合poems/:idへリダイレクト
     # できなかった場合再レンダリングし、エラー表示
     if poetry.save
+      flash.now[:notice] = "寄稿が完了しました。"
       redirect_to("/poems/#{params[:id]}")
     else
       @poem = Poem.find_by(id: params[:id])
+      flash.now[:notice] = "内容に誤りがあります。"
       render("poem/contribute_form")
     end
   end

@@ -1,6 +1,11 @@
 @import "./home";
 @import "./poem";
 
+$colorBase : #F5F5F5;
+$colorTop : #2F89FC;
+$colorBottom : #40514E;
+$colorNotice: #30E3CA;
+
 *{
   box-sizing: border-box;
   margin: 0;
@@ -27,7 +32,7 @@ header {
   width:100%;
   height: 64px;
   margin-top: 0;
-  background-color: rgba(188,217,121,0.8);
+  background-color: $colorTop;
 }
 
 header a {
@@ -52,17 +57,30 @@ header .header-right li {
 }
 
 body {
-  background-color: #F5F7DC;
+  background-color: $colorBase;
+}
+
+.notice {
+  position: fixed;
+  top: 64px;
+  height: 32px;
+  width: 100%;
+  background-color: #30E3CA;
+}
+
+.msg-box {
+  text-aline: center;
+  line-height: 32px;
 }
 
 .main {
-  margin-top: 64px;
+  padding-top: 96px;
   min-height: 600px;
 }
 
 footer {
   height: 160px;
-  background-color: #2D3142;
+  background-color: $colorBottom;
   margin-bottom: 0;
   color: #FFFEFF;
   padding-top: 18px;
