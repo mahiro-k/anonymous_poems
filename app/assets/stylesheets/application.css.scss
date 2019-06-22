@@ -1,15 +1,20 @@
 @import "./home";
 @import "./poem";
+@import url('https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c|Open+Sans+Condensed:300&display=swap');
 
 $colorBase : #F5F5F5;
 $colorTop : #2F89FC;
 $colorBottom : #40514E;
 $colorNotice: #30E3CA;
 
+$colorFontDefault : #3a3a3a;
+$colorFontFooter : #FFFEFF;
+
 *{
   box-sizing: border-box;
   margin: 0;
-  font-family: 'Avenir', 'Meiryo', 'Osaka', 'MS Pゴシック', 'sans-serif';
+  font-family: 'Open Sans Condensed', 'M PLUS Rounded 1c', 'sans-serif';
+  color: $colorFontDefault;
 }
 
 li {
@@ -18,6 +23,8 @@ li {
 
 a {
   text-decoration: none;
+  &:link { color: $colorFontDefault; }
+  &:visited { color: $colorFontDefault; }
 }
 
 .container {
@@ -36,7 +43,7 @@ header {
 }
 
 header a {
-  color: #001514;
+  color: $colorFontDefault;
 }
 
 header .header-left {
@@ -65,7 +72,7 @@ body {
   top: 64px;
   height: 32px;
   width: 100%;
-  background-color: #30E3CA;
+  background-color: $colorNotice;
 }
 
 .msg-box {
@@ -82,26 +89,30 @@ footer {
   height: 160px;
   background-color: $colorBottom;
   margin-bottom: 0;
-  color: #FFFEFF;
+  color: $colorFontFooter;
   padding-top: 18px;
-}
-
-footer .footer-left {
-  float: left;
-  font-size: 18px;
-}
-
-footer .footer-right {
-  height: 64px;
-  float: right;
-}
-
-footer .footer-right li {
-  margin-bottom: 12px;
-}
-
-footer a {
-  color: #FFFEFF;
+  
+  * {
+    color: $colorFontFooter;
+    
+    .footer-left {
+      float: left;
+      font-size: 18px;
+    }
+    
+    .footer-right {
+      height: 64px;
+      float: right;
+    
+      li {
+        margin-bottom: 12px;
+      }
+      a {
+        &:link { color: $colorFontFooter; }
+        &:visited { color: $colorFontFooter; }
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 1024px) {

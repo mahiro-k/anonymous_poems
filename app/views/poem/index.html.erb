@@ -1,4 +1,14 @@
 <h1 class="page-title">詩集一覧</h1>
 <% @poems.each do |poem| %>
-  <p><%= link_to(poem.title, "/poems/#{poem.id}") %></p>
+  <%= link_to("/poems/#{poem.id}") do %>
+  <div class="poem-item">
+    <p class="poem-item-title"><%= poem.title %></p>
+    <% if poem.discription != "" %>
+        <hr/>
+        <div class="poem-item-discription">
+          <%= simple_format(poem.discription) %>
+        </div>
+    <% end %>
+  </div>
+  <% end %>
 <% end %>

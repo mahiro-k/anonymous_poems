@@ -1,7 +1,13 @@
 <h1 class="page-title"><%= @poem.title %></h1>
 <p><%= @poem.discription %></p>
-<%= link_to("寄稿", "/poems/#{@poem.id}/contribute") %>
+<%= link_to("/poems/#{@poem.id}/contribute") do %>
+  <p class="contribute-link">寄稿<i class="fas fa-caret-right"></i></p>
+<% end %>
 <% @poetries.each do |poetry| %>
-<p>----------</p>
-<p><%= poetry.content %></p>
+  <div class="poetry">
+    <p class="poetry-content"><%= poetry.content %></p>
+    <% if poetry.author != "" %>
+      <p class="poetry-author"><%= poetry.author %></p>
+    <% end %>
+  </div>
 <% end %>

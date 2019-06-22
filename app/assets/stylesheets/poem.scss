@@ -1,6 +1,49 @@
 // Place all the styles related to the Poem controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$colorPoemItem : #FBFBFB;
+
+
 .page-title {
   font-weight: normal;
+}
+
+.poem-item {
+  margin: 16px auto;
+  text-align: center;
+  background-color: $colorPoemItem;
+  
+  &-title {
+    display: inline-block;
+    margin: 20px auto;
+    font-size: 32px;
+    letter-spacing: 5px;
+  }
+  
+  &-discription {
+    display: inline-block;
+    margin: 18px auto;
+  }
+  
+  hr {
+    width: 320px;
+    margin: 5px auto;
+  }
+}
+
+.contribute-link {
+  display: inline-block;
+  line-height: 32px;
+  font-size: 18px;
+  i { 
+    margin-left: 5px;
+  }
+}
+
+.poetry {
+  border-top: solid 2px #CFCFCF;
+  
+  &-content {
+    font-size: 28px;
+  }
 }
