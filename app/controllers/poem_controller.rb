@@ -12,6 +12,7 @@ class PoemController < ApplicationController
   end
   
   def create_form
+    @poem = Poem.new
   end
   
   def create
@@ -23,20 +24,27 @@ class PoemController < ApplicationController
     if poem.save
       redirect_to("/poems/index")
     else
+      @poem = poem
       render("poem/create_form")
     end
   end
   
   def contribute_form
     @poem = Poem.find_by(id: params[:id])
+    @content = ''
+    @author = ''
   end
   
   def contribute
-    poetry = Poetry.new(poem_id: params[:id], content: params[:content])
+    # 再レンダリング用に入力情報を保持
+    @content = params[:contnet]
+    @author = params[:author]
+    
+    poetry = Poetry.new(poem_id: params[:id], content: @content)
     
     # authorが入力されている場合
-    if params[:author]
-      poetry.author = params[:author]
+    if @author
+      poetry.author = @author
     end
     
     # DBに保存できた場合poems/:idへリダイレクト
