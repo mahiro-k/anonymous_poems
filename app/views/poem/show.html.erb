@@ -1,13 +1,25 @@
-<h1 class="page-title"><%= @poem.title %></h1>
-<p><%= @poem.discription %></p>
-<%= link_to("/poems/#{@poem.id}/contribute") do %>
-  <p class="contribute-link">寄稿<i class="fas fa-caret-right"></i></p>
-<% end %>
-<% @poetries.each do |poetry| %>
-  <div class="poetry">
-    <p class="poetry-content"><%= poetry.content %></p>
-    <% if poetry.author != "" %>
-      <p class="poetry-author"><%= poetry.author %></p>
-    <% end %>
+<div class="poem-page">
+  <div class="poems">
+    <h1 class="poems-title"><%= @poem.title %></h1>
+    <div class="poems-discription">
+      <%= simple_format(@poem.discription) %>
+    </div>
+    <ul class="poems-contribute-links">
+      <li>
+        <%= link_to("/poems/#{@poem.id}/contribute") do %>
+          <p>寄稿<i class="fas fa-caret-right"></i></p>
+        <% end %>
+      </li>
+    <ul>
   </div>
-<% end %>
+  <% @poetries.each do |poetry| %>
+    <div class="poetry">
+      <p class="poetry-content"><%= poetry.content %></p>
+      <% if poetry.author != nil && poetry.author != "" %>
+        <div class="poetry-author">
+          <p><%= poetry.author %></p>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>

@@ -3,7 +3,7 @@ require 'poetry.rb'
 
 class PoemController < ApplicationController
   def index
-      @poems = Poem.all
+    @poems = Poem.all
   end
   
   def show
@@ -25,7 +25,7 @@ class PoemController < ApplicationController
       flash.now[:notice] = "作成が完了しました。"
       redirect_to("/poems/index")
     else
-    flash.now[:notice] = "内容に誤りがあります。"
+      flash.now[:notice] = "内容に誤りがあります。"
       @poem = poem
       render("poem/create_form")
     end

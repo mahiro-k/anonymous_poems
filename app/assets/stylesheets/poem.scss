@@ -1,11 +1,44 @@
 // Place all the styles related to the Poem controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
 $colorPoemItem : #FBFBFB;
+$colorFormBorder : #dfdfdf;
+$colorFromPlaceholder : #bababa;
 
+.poem-page {
+  background-color: $colorPoemItem;
+  margin-bottom: 24px;
+}
 
-.page-title {
-  font-weight: normal;
+.poems {
+  text-align: center;
+  position: relative;
+  
+  &-title {
+    padding-top: 32px;
+    font-size: 96px;
+    font-weight: normal;
+  }
+  
+  &-discription {
+   font-size: 24px;
+    padding: 10px 0 78px 0;
+  }
+  
+  &-contribute-links {
+    float: right;
+    position: absolute;
+    right: 58px;
+    bottom: 24px;
+    display: inline-block;
+    line-height: 32px;
+    font-size: 16px;
+    i { 
+      margin-left: 5px;
+      color: #999999;
+    }
+  }
 }
 
 .poem-item {
@@ -28,22 +61,175 @@ $colorPoemItem : #FBFBFB;
   hr {
     width: 320px;
     margin: 5px auto;
-  }
-}
-
-.contribute-link {
-  display: inline-block;
-  line-height: 32px;
-  font-size: 18px;
-  i { 
-    margin-left: 5px;
+    border-width: 0.5px;
   }
 }
 
 .poetry {
+  margin: 0 36px;
   border-top: solid 2px #CFCFCF;
+  text-align: center;
   
   &-content {
     font-size: 28px;
+    padding: 56px 0;
+  }
+  
+  &-author {
+    text-align: right;
+    margin-bottom: 36px;
+    position: relative;
+    
+    p {
+      position: relative;
+      display: inline-block;
+      right: 216px;
+      bottom: 32px;
+    }
+  }
+}
+
+.create-form {
+  h2 {
+    font-weight: normal;
+    font-size: 24px;
+  }
+  
+  &-title {
+    padding-top: 30px;
+    
+    input {
+      border-style: none;
+      border: solid 0.5px $colorFormBorder;
+      
+      height: 46px;
+      width: 640px;
+      font-size: 26px;
+      padding: 0 24px;
+      display: block;
+      margin: 0 auto;
+      
+      &::placeholder {
+        color: $colorFromPlaceholder;
+      }
+    }
+  }
+  
+  &-discription {
+    padding-top: 30px;
+    
+    textarea {
+      border-style: none;
+      border: solid 0.5px $colorFormBorder;
+      
+      height: 124px;
+      width: 640px;
+      font-size: 18px;
+      padding: 0 24px;
+      display: block;
+      margin: 0 auto;
+      
+      &::placeholder {
+        color: $colorFromPlaceholder;
+      }
+    }
+  }
+  
+  &-submit {
+    text-aline: center;
+    padding-top: 30px;
+    
+    .btn {
+      font-size: 18px;
+      display: block;
+      margin: 0 auto;
+      border-style: none;
+      background-color: $colorFormBorder;
+      height: 46px;
+      width: 248px;
+      
+      &:hover {
+        cursor:pointer;
+      }
+    }
+  }
+}
+
+.contribute {
+  &-poems {
+    text-align: center;
+    h2 {
+      font-weight: normal;
+      font-size: 72px;
+    }
+    &-discription {
+      font-size: 24px;
+      display: inline-block;
+      margin: 18px auto;
+    }
+  }
+  
+  &-form {
+    padding-bottom: 24px;
+    
+    &-content {
+      padding: 0 98px;
+      textarea {
+        border-style: none;
+        border: solid 0.5px $colorFormBorder;
+        
+        height: 124px;
+        width: 640px;
+        font-size: 18px;
+        padding: 0 24px;
+        display: block;
+        margin: 0 auto;
+        
+        &::placeholder {
+          color: $colorFromPlaceholder;
+        }
+      }
+    }
+    
+    &-author {
+      padding: 32px 98px;
+      padding-bottom: 0;
+      
+      input {
+        padding-top: 10px;
+        border-style: none;
+        border: solid 0.5px $colorFormBorder;
+        
+        height: 32px;
+        width: 320px;
+        font-size: 18px;
+        padding: 0 24px;
+        display: block;
+        margin: 0 auto;
+        
+        &::placeholder {
+          color: $colorFromPlaceholder;
+        }
+      }
+    }
+    
+    &-submit {
+      text-align: center;
+      padding-top: 30px;
+      
+      .btn {
+        font-size: 18px;
+        display: block;
+        margin: 0 auto;
+        border-style: none;
+        background-color: $colorFormBorder;
+        height: 46px;
+        width: 248px;
+        
+        &:hover {
+          cursor:pointer;
+        }
+      }
+    }
   }
 }

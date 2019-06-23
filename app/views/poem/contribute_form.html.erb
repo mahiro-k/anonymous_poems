@@ -1,9 +1,22 @@
 <h1 class="page-title">寄稿</h1>
-<h2><%= @poem.title %><h2>
-<%= form_tag("/poems/#{@poem.id}/contribute") do %>
-  <p>詩</p>
-  <textarea name="content" value="<%= @content %>"></textarea>
-  <p>著者名</p>
-  <input type="text" name="author" placeholder="匿名希望" value="<%= @author %>">
-  <input type="submit" value="寄稿">
-<% end %>
+<div class="container">
+  <div class="contribute-poems">
+    <h2><%= @poem.title %><h2>
+    <div class="contribute-poems-discription">
+      <%= simple_format(@poem.discription) %>
+    </div>
+  </div>
+  <%= form_tag("/poems/#{@poem.id}/contribute", :class => "contribute-form") do %>
+    <div class="contribute-form-content">
+      <p>詩</p>
+      <textarea name="content" placeholder="600文字以内で入力してください。"><%= @content %></textarea>
+    </div>
+    <div class="contribute-form-author">
+      <p>著者名</p>
+      <input type="text" name="author" placeholder="匿名可能" value="<%= @author %>">
+    </div>
+    <div class="contribute-form-submit">
+      <input type="submit" value="寄稿" class="btn">
+    </div>
+  <% end %>
+</div>
