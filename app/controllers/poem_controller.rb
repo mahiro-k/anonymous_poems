@@ -22,7 +22,7 @@ class PoemController < ApplicationController
     # DBに保存できた場合poems/indexへリダイレクト
     # できなかった場合再レンダリングし、エラー表示
     if poem.save
-      flash.now[:notice] = "作成が完了しました。"
+      flash[:notice] = "作成が完了しました。"
       redirect_to("/poems/index")
     else
       flash.now[:notice] = "内容に誤りがあります。"
@@ -52,7 +52,7 @@ class PoemController < ApplicationController
     # DBに保存できた場合poems/:idへリダイレクト
     # できなかった場合再レンダリングし、エラー表示
     if poetry.save
-      flash.now[:notice] = "寄稿が完了しました。"
+      flash[:notice] = "寄稿が完了しました。"
       redirect_to("/poems/#{params[:id]}")
     else
       @poem = Poem.find_by(id: params[:id])
