@@ -138,6 +138,7 @@ $colorFromPlaceholder : #bababa;
   &-submit {
     text-aline: center;
     padding-top: 30px;
+    padding-bottom: 30px;
     
     .btn {
       font-size: 18px;
@@ -174,6 +175,11 @@ $colorFromPlaceholder : #bababa;
     
     &-content {
       padding: 0 98px;
+      
+      h2 {
+        font-size: 24px;
+      }
+      
       textarea {
         border-style: none;
         border: solid 0.5px $colorFormBorder;
@@ -195,8 +201,11 @@ $colorFromPlaceholder : #bababa;
       padding: 32px 98px;
       padding-bottom: 0;
       
+      h2 {
+        font-size: 24px;
+      }
+      
       input {
-        padding-top: 10px;
         border-style: none;
         border: solid 0.5px $colorFormBorder;
         
